@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="thin center" style="font-size:5rem">SAS Analysis Software</h1><br>
+        <p class="center">The treatment and analysis of small angle scattering (SAS) data is always a technical hurdle and a barrier for many groups. Through this project, we aim to develop a web based analysis package for researchers to use. The goal is to make SAS accessible to non-experts to increase the applications of the technique.</p>
+        <p class="center">
+            <a href="{{ url_for('new') }}" class="btn btn-lg btn-outline-primary">New Dataset</a>    
+        </p>
+    </div>
+{% endblock %}

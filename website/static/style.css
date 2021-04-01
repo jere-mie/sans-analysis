@@ -1,0 +1,13 @@
+.thin{
+    font-weight: 200;
+}
+.center{
+    text-align: center;
+}
+.pushed{
+    margin: 20px;
+    padding: 30px;
+}
+.light{
+    background-color: rgb(250, 250, 250);
+}
