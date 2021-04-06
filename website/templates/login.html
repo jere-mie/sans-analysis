@@ -36,11 +36,12 @@
                 {{ form.rememberMe(class="form-check-input") }}
                 {{ form.rememberMe.label(class="form-check-label") }}
             </div>
+            <br>
             <div class="form-group">
                 {{ form.submit(class='btn btn-outline-primary') }}
             </div>
         </form>
         <br><br>
-        <h3><a href="{{ url_for('register') }}">Need an Account?</a></h3>
+        <h4>Need an account? <a href="{{ url_for('register') }}">Create one here</a></h4>
     </div>
 {% endblock %}
