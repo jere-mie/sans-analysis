@@ -1,3 +1,29 @@
+# added by me
+data2.txt
+ihom.png
+imon.png
+fhom.png
+fhom2.png
+__pycache__/
+test/
+venv/
+.vscode/
+secrets.json
+site.db
+website/uploads/
+website/static/uploads/*
+website/data2.txt
+databig.txt
+data100.txt
+fig4/
+fig6-all.png    
+fig6.png        
+iq-2.png        
+iq.png
+iq.txt
+test-het.txt
+data100.dat
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
