@@ -38,6 +38,7 @@ I'm going to need to compartmentalize much of the workflow into different functi
 - homogeneous stuff
     - I'll need to ask Fred how the homogeneous I(q) fits together with the heterogeneous stuff
     - If they are kept separate, then I'll just need to do this in somewhere else, but if they are used together and combined at some point, this will likely exist as something called by generate()  
+
 ### Note: I may not use the same exact function names in production, the idea is more important than the actual names
 
 ## Redis Stuff
