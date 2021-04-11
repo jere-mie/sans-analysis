@@ -19,3 +19,4 @@ The purpose of this is to take jobs from the flask app, decide how to schedule/r
 ### How are these two connected?
 These two communicate via a simple Redis queue. The flask app adds 'jobs' to the queue for different datasets, and the scheduler pops these from the queue to run them. They both are connected to the same SQL db and have access to the same files.
 
+##### Here are some less-than-organized scratch notes by myself: [click here](notes.md)

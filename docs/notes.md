@@ -1,6 +1,45 @@
 # Notes
 Just some scratch notes that I want to save for later
 
+## I(q) Genetation Stuff
+I'm going to need to compartmentalize much of the workflow into different functions. So here is a running list of them:
+- alpha()
+    - converts a domain area fraction (ad) value into alphad
+- e26()
+    - used for generating the "w" vector
+    - based on Fred's equation 26
+- legendre()
+    - not yet implemented
+    - uses the above two functions to generate the "w" vector
+- readData()
+    - not yet implemented
+    - returns the F matrix
+- functions used for fitting:
+    - f_bs()
+        - float version of binary search
+        - helper function used to transform a y curve to a particular x vector
+        - rather than using equals to return the index, I check against a threshhold by which the elements can differ
+    - change_x()
+        - used to transform a y curve to a particular x vector
+        - this is what allows me to do things like chi squared calculations and goodness of fit evaluation
+    - evaluate()
+        - may or may not be used
+        - the idea is to evaluate the goodness of fit of a particular I(q)
+- generate()
+    - uses the readData() and legendre(), among possibly others, to generate and return an I(q) vector
+    - this one will likely be the longest and the most important function
+- fit()
+    - this would continuously apply steps 2.5 and 3 of the workflow, as well as calling evaluate() to find the best combination of ad and number of domains
+    - would be called in generate()
+- generateMatrices()
+    - not entirely sure how I want to implement this one, but essentially this would be for the D, M, Omega, and Theta matrices
+    - Generating these is far from quick so it may be a bit weird to use a function call each time I need them
+    - maybe return a tuple of all 4 of them and use that?
+- homogeneous stuff
+    - I'll need to ask Fred how the homogeneous I(q) fits together with the heterogeneous stuff
+    - If they are kept separate, then I'll just need to do this in somewhere else, but if they are used together and combined at some point, this will likely exist as something called by generate()  
+### Note: I may not use the same exact function names in production, the idea is more important than the actual names
+
 ## Redis Stuff
 - use a "numprocs" var for number of processes running (when I eventually implement multiprocessing)
     - running processes decrement it when they finish
