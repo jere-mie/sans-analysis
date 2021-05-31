@@ -17,14 +17,15 @@ class User(db.Model, UserMixin):
         return f"Username: {self.username}"
 
 class Dataset(db.Model):
-    # primary key
-    id = db.Column(db.Integer, primary_key=True)
-    # title given by user
-    title = db.Column(db.String(50), unique=True, nullable=False)
-    # user associated with the dataset
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    id = db.Column(db.Integer, primary_key=True) # primary key
+    title = db.Column(db.String(50), unique=True, nullable=False) # title given by user
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False) # user associated with the dataset
     # some constants
-    rm = db.Column(db.Float, nullable=False)
-    o = db.Column(db.Float, nullable=False)
-    ps = db.Column(db.Float, nullable=False)
-    ad = db.Column(db.Float, nullable=False)
+    rm = db.Column(db.Float)
+    o = db.Column(db.Float)
+    ps = db.Column(db.Float)
+    ad = db.Column(db.Float) # domain area fraction
+    nd = db.Column(db.Integer) # number of domains
+    status = db.Column(db.String(12), default='idle') # status = "running", "completed", "idle", etc.
+
+
