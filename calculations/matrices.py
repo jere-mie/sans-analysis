@@ -81,7 +81,7 @@ def generateF(rlower, rstep, numr, qlower, qstep, numq, llower, lstep, numl):
     return F
 
 # generates F matrix, but nothing inputted, so user is asked for values
-def generateF():
+def generateFPrompt():
     rlower = int(input("R lower bound: "))
     rstep = int(input("R step: "))
     numr = int(input("Number of R Elements: "))
