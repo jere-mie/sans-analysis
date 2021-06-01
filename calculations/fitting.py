@@ -18,3 +18,14 @@ def f_bs(arr, x):
 # uses f_bs to transform a larger array into a wanted x range
 def change_x(x_old, y_old, x_wanted):
     return [y_old[f_bs(x_old, i)] for i in x_wanted]
+
+
+# gets the scaling factor of vbad to vgood in an inefficient way...
+# to make it more efficient, change the for loop to go in range(0, len(vbad), n)
+# where n is some arbitrary integer, and then change the return statement to
+# return sumDiff/(len(vbad)/n) for that same n
+def dynamicScale(vbad, vgood):
+    sumDiff = 0
+    for i in range(len(vbad)):
+        sumDiff+= vgood[i]/vbad[i]
+    return sumDiff/len(vbad)
