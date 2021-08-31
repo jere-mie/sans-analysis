@@ -24,6 +24,7 @@ iq.png
 iq.txt
 test-het.txt
 data100.dat
+dump.rdb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
