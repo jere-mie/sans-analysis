@@ -33,7 +33,7 @@ Getting List Values From Left (Ending Num is Inclusive)
 
 ## Using Redis With Python
 Installing:
-> `pip install redis`
+> `pip3 install redis`
 
 Quickstart:
 ```py
