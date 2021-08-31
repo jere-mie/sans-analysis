@@ -1,0 +1,8 @@
+flask
+flask-wtf
+flask-sqlalchemy
+flask-login
+matplotlib
+numpy
+scipy
+bcrypt

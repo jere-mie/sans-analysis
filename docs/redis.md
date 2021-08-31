@@ -4,7 +4,7 @@ Installing Redis:
 > `sudo apt install redis`
 
 Starting Redis Server:
-> `redis-server &`
+> `redis-server --port <PORT NUMBER> &`
 
 Shutting Down Redis:
 > `redis-cli shutdown`
