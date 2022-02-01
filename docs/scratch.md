@@ -1,24 +1,32 @@
 # Scratch Notes
+
 Just some scratch notes that I want to save for later
 
 ## NOTE: Since this specific web interface is still in early development, I may have things written in here which I plan to implement, but have not yet implemented
 
 ## How does the backend work?
+
 Essentially, there are two parts to the backend:
+
 1. The Flask web app
 2. The server side job scheduler/maintainer
 
 ### 1. The Flask App
+
 The purpose of the flask app is entirely to deal with handling requests from clients, and storing/managing data. None of the actual calculations are done by the 'flask' portion of the web app
 
 ### 2. The Job Scheduler
+
 The purpose of this is to take jobs from the flask app, decide how to schedule/run these tasks, then run the necessary calculations and send the data back to the db.
 
 ### How are these two connected?
+
 These two communicate via a simple Redis queue. The flask app adds 'jobs' to the queue for different datasets, and the scheduler pops these from the queue to run them. They both are connected to the same SQL db and have access to the same files.
 
 ## I(q) Genetation Stuff
+
 I'm going to need to compartmentalize much of the workflow into different functions. So here is a running list of them:
+
 - alpha()
     - converts a domain area fraction (ad) value into alphad
 - e26()
@@ -58,6 +66,7 @@ I'm going to need to compartmentalize much of the workflow into different functi
 ### Note: I may not use the same exact function names in production, the idea is more important than the actual names
 
 ## Redis Stuff
+
 - use a "numprocs" var for number of processes running (when I eventually implement multiprocessing)
     - running processes decrement it when they finish
     - scheduler thing increments it when it spins up a new process
@@ -69,6 +78,7 @@ I'm going to need to compartmentalize much of the workflow into different functi
     - flask app reads from the db
 
 ## Goodness of fit stuff
+
 - currently the y_experimental and y_theoretical vectors have different corresponding x vectors
     - this is solved by transforming the y_theoretical into a new vector which uses the same x vector as y_experimental
 - with this solved, we can actually evaluate the goodness of fit
@@ -81,5 +91,3 @@ I'm going to need to compartmentalize much of the workflow into different functi
     - perhaps taking the log base 10 of the data can solve this, which essentially converts from a 'logarithmic graph' to a 'linear graph'
         - what this would mean is the different sections of the curve could be compared more evenly, such that the upper sections don't contribute way more than the lower sections
         - the problem is I don't know if that is what we want, so I'll have to see
-
-    
