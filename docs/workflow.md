@@ -15,8 +15,8 @@
 
 ## Step 2
 
-1. We take the absolute square of the W matrix (QxLxS) to create $|W|^2$
-2. We dot the $|W|^2$ matrix (QxLxS) with the squared angular coefficient vector (denoted as $|w~|^2$) (L)
+1. We take the absolute square of the W matrix (QxLxS) to create $\|W\|^2$
+2. We dot the $\|W\|^2$ matrix (QxLxS) with the squared angular coefficient vector (denoted as $\|w~\|^2$) (L)
     - Resultant is the monodisperse I(q) matrix (denoted as P) (Qx1xS or just QxS)
     - [How we get the w~ vector](w-vector.md)
 
