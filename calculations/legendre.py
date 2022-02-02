@@ -4,7 +4,7 @@ from scipy.special import eval_legendre as lg
 
 # equation 26 function
 def e26(l, ad):
-    a = (np.power(np.pi*(2.0*l + 1.0), (1.0/2.0)))/np.float(l)
+    a = (np.power(np.pi*(2.0*l + 1.0), (1.0/2.0)))/float(l)
     b = np.cos(ad)*lg(int(l), np.cos(ad))
     c = lg(int(l+1), np.cos(ad))
     return a*(b-c)
@@ -28,3 +28,26 @@ def create_w(n, ad):
 # not used in final workflow, but useful for testing against the paper
 def y(l, alphad, ad):
     return (abs(e26(l, alphad))**2)/ad
+
+
+def sum_Cl(wl, angles, nd, ad, l):
+    tot = 0
+    for i in range(nd):
+        for j in range(nd):
+            tot+= (np.abs(wl)**2) * lg(l, np.cos(angles[i][j]))
+    return tot
+
+# tesing sum_Cl
+if __name__ == '__main__':
+    l = [1,2,3,4,5]
+    ad = 0.2
+    nd = 4
+    angles = [
+        [0, 1.9106, 1.9106, 1.9106],
+        [1.9106, 0, 1.9106, 1.9106],
+        [1.9106, 1.9106, 0, 1.9106],
+        [1.9106, 1.9106, 1.9106, 0]
+    ]
+    wl0 = [e26(i, alpha(nd, ad)) for i in l]
+
+    print([sum_Cl(wl0[i], angles, nd, ad, l[i]) for i in range(len(l))])
