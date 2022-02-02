@@ -8,7 +8,7 @@ It is useful to think of the F matrix as "L" 2-d matrices of size QxR. This is h
 ## Matrix Element Calculations
 
 Matrix elements are calculated by the below formula.  
-Note that "jl" refers to the Legendre polynomial of degree l (from L).  
+Note that "$j_l$" refers to the Legendre polynomial of degree l (from L).  
 ![Matrix Element Calculation](https://media.discordapp.net/attachments/937419611622752277/937425589764231168/unknown.png)
 
 ## F0
