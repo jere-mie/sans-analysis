@@ -1,5 +1,5 @@
 # the following adds '../' to the python path to allow for me to import from calculations
-from testHelper import updatePath, almost_equals
+from testUtils import updatePath, almost_equals
 updatePath()
 
 from calculations.helpers import e26, alpha, sum_Cl
