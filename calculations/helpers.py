@@ -36,18 +36,3 @@ def sum_Cl(wl, angles, nd, ad, l):
         for j in range(nd):
             tot+= (np.abs(wl)**2) * lg(l, np.cos(angles[i][j]))
     return tot
-
-# tesing sum_Cl
-if __name__ == '__main__':
-    l = [1,2,3,4,5]
-    ad = 0.2
-    nd = 4
-    angles = [
-        [0, 1.9106, 1.9106, 1.9106],
-        [1.9106, 0, 1.9106, 1.9106],
-        [1.9106, 1.9106, 0, 1.9106],
-        [1.9106, 1.9106, 1.9106, 0]
-    ]
-    wl0 = [e26(i, alpha(nd, ad)) for i in l]
-
-    print([sum_Cl(wl0[i], angles, nd, ad, l[i]) for i in range(len(l))])
