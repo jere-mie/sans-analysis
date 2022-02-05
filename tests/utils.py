@@ -7,5 +7,5 @@ def updatePath():
     # sys.path.append(str(Path('.').absolute().parent))
 
 # this is useful with assert statements using floats
-def almost_equals(a, b):
-    return abs(a-b) < 0.0001
+def almost_equals(a, b, tolerance=0.0001):
+    return abs(a-b) < tolerance
