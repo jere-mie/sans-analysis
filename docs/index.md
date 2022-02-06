@@ -1,16 +1,18 @@
 <script>
-    (async () => {
-        const response = await fetch('https://api.github.com/repos/jere-mie/sans-analysis/contents/docs/');
-        const data = await response.json();
-        let htmlString = '<ul>';
-        for (let file of data) {
-            if (file.name.endsWith('.md')){
-                htmlString += `<li><a href="${file.path.slice(4, -3)}">${file.name}</a></li>`;
+        (async () => {
+            const response = await fetch('https://api.github.com/repos/jere-mie/sans-analysis/contents/docs/');
+            const data = await response.json();
+            let htmlString = '<ul>';
+            for (let file of data) {
+                if (file.name.endsWith('.md')){
+                    htmlString += `<li><a href="${file.path.slice(4, -3)}">${file.name}</a></li>`;
+                }
             }
-        }
-        htmlString += '</ul>';
-        document.getElementsByTagName('body')[0].innerHTML = htmlString;
-    })()
+            htmlString += '</ul>';
+            setTimeout(() => {
+                document.getElementById('all-pages').innerHTML += htmlString;                
+            }, 500)
+        })()
 </script>
 
 
@@ -30,5 +32,4 @@ This is to help both future developers understand my code, as well as myself whe
 
 
 ## All Pages
-{% for file in site.static_files %} {% if file.extname == ".md" %} {{ file.basename }} {% endif %} {% endfor %}
 
