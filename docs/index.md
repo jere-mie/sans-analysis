@@ -10,7 +10,7 @@
             }
             htmlString += '</ul>';
             setTimeout(() => {
-                document.getElementById('all-pages').innerHTML += htmlString;                
+                document.getElementById('pagesDiv').innerHTML += htmlString;                
             }, 500)
         })()
 </script>
@@ -33,3 +33,4 @@ This is to help both future developers understand my code, as well as myself whe
 
 ## All Pages
 
+<div id="pagesDiv"></div>
