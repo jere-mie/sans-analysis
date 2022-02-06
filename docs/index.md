@@ -5,7 +5,7 @@
         let htmlString = '<ul>';
         for (let file of data) {
             if (file.name.endsWith('.md')){
-                htmlString += `<li><a href="${file.path.slice(4)}">${file.name}</a></li>`;
+                htmlString += `<li><a href="${file.path.slice(4, -3)}">${file.name}</a></li>`;
             }
         }
         htmlString += '</ul>';
