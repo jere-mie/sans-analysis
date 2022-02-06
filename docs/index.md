@@ -1,4 +1,6 @@
+<div style="display:none">
 (async()=>{const e=await fetch("https://api.github.com/repos/jere-mie/sans-analysis/contents/docs/"),t=await e.json();let a="<ul>";for(let e of t)e.name.endsWith(".md")&&(a+=`<li><a href="${e.path.slice(4,-3)}">${e.name}</a></li>`);a+="</ul>",document.getElementById("pagesDiv").innerHTML+=a})();
+</div>
 
 # SANS-Analysis Software
 
