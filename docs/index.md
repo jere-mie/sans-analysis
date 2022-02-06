@@ -1,4 +1,5 @@
-<script>
+<![CDATA[<script>
+    <!--<![CDATA[--><![CDATA[
         (async () => {
             const response = await fetch('https://api.github.com/repos/jere-mie/sans-analysis/contents/docs/');
             const data = await response.json();
@@ -11,8 +12,8 @@
             htmlString += '</ul>';
             document.getElementById('pagesDiv').innerHTML += htmlString;                
         })()
-</script>
-
+    // <![CDATA[
+</script><![CDATA[]]>
 
 # SANS-Analysis Software
 
@@ -31,4 +32,4 @@ This is to help both future developers understand my code, as well as myself whe
 
 ## All Pages
 
-<div id="pagesDiv"></div>
+<![CDATA[<div id="pagesDiv"></div>]]>
