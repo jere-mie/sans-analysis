@@ -9,9 +9,7 @@
                 }
             }
             htmlString += '</ul>';
-            setTimeout(() => {
-                document.getElementById('pagesDiv').innerHTML += htmlString;                
-            }, 500)
+            document.getElementById('pagesDiv').innerHTML += htmlString;                
         })()
 </script>
 
