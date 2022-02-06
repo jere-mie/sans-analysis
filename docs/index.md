@@ -1,7 +1,3 @@
-<div style="display:none">
-<script>(async()=>{const e=await fetch("https://api.github.com/repos/jere-mie/sans-analysis/contents/docs/"),t=await e.json();let a="<ul>";for(let e of t)e.name.endsWith(".md")&&(a+=`<li><a href="${e.path.slice(4,-3)}">${e.name}</a></li>`);a+="</ul>",document.getElementById("pagesDiv").innerHTML+=a})();</script>
-</div>
-
 # SANS-Analysis Software
 
 ## Developer notes and documentation
@@ -19,4 +15,4 @@ This is to help both future developers understand my code, as well as myself whe
 
 ## All Pages
 
-<div id="pagesDiv"></div>
+{% include all-pages.html %}
