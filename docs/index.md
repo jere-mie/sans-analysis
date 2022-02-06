@@ -1,17 +1,17 @@
-    <script>
-        (async () => {
-            const response = await fetch('https://api.github.com/repos/jere-mie/sans-analysis/contents/docs/');
-            const data = await response.json();
-            let htmlString = '<ul>';
-            for (let file of data) {
-                if (file.name.endsWith('.md')){
-                    htmlString += `<li><a href="${file.path.slice(4)}">${file.name}</a></li>`;
-                }
+<script>
+    (async () => {
+        const response = await fetch('https://api.github.com/repos/jere-mie/sans-analysis/contents/docs/');
+        const data = await response.json();
+        let htmlString = '<ul>';
+        for (let file of data) {
+            if (file.name.endsWith('.md')){
+                htmlString += `<li><a href="${file.path.slice(4)}">${file.name}</a></li>`;
             }
-            htmlString += '</ul>';
-            document.getElementsByTagName('body')[0].innerHTML = htmlString;
-        })()
-    </script>
+        }
+        htmlString += '</ul>';
+        document.getElementsByTagName('body')[0].innerHTML = htmlString;
+    })()
+</script>
 
 
 # SANS-Analysis Software
