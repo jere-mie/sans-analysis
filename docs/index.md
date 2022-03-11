@@ -11,7 +11,7 @@ This is to help both future developers understand my code, as well as myself whe
 - [Redis info](redis.md)
 - [Some scratch notes](scratch.md)
 - [Slides](slides.md)
-
+- [Running Jupyter Notebooks in Google Colab](running-in-google-colab.md)
 
 ## All Pages
 
