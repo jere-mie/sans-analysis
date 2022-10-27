@@ -1,5 +1,6 @@
 # functions related to construction of the w vector
 import numpy as np
+import random
 from scipy.special import eval_legendre as lg
 
 # equation 26 function, from Fred's paper
@@ -10,8 +11,7 @@ def e26(l, ad):
     return a*(b-c)
 
 # given ad and number of domains, calculated alphad
-# I believe ad is the domain area fraction of EACH domain
-    # should confirm with fred
+# ad is the TOTAL domain area fraction
 def alpha(n, ad):
     return (np.arccos(1-((2.0*ad)/n)))
 
@@ -37,6 +37,33 @@ def generate_angles(vectors):
         for j in range(len(vectors)):
             angles[i][j] = angle_between(vectors[i], vectors[j])
     return angles
+
+# returns true if the domains overlap, false otherwise
+# u and v are domain center vectors
+# au and av are the domain half angles
+def domainsOverlap(u, au, v, av):
+    pass
+
+# creates and returns a random point on a sphere
+# essentially, generates our trial domain
+def randomSpherePt(radius):
+    u = random.random()
+    v = random.random()
+    phi = np.arccos(2*v-1)
+    theta = 2*np.pi*u
+    R = (np.cos(theta)*np.sin(phi)) * (np.sin(theta)*np.sin(phi)) * (np.cos(phi))
+    print(f'''
+    u => {u}
+    v => {v}
+    phi => {phi}
+    theta => {theta}
+    R => {R}
+    ''')
+    pass
+
+# returns a list of domain center vectors
+def randomDomainCentres(n, ad):
+    pass
 
 #############################
 
