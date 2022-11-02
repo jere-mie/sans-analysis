@@ -39,31 +39,38 @@ def generate_angles(vectors):
     return angles
 
 # returns true if the domains overlap, false otherwise
-# u and v are domain center vectors
-# au and av are the domain half angles
-def domainsOverlap(u, au, v, av):
-    pass
+# u and v are domain center vectors (numpy arrays)
+# ~~au and av are the domain half angles~~
+# we're going to just use one alpha instead
+def domainsOverlap(u, v, alphad):
+    return np.arccos(np.dot(u, v) / (np.linalg.norm(u)*np.linalg.norm(v))) < (2*alphad)
+
+def anyOverlap(vectors, trial, alphad):
+    for i in vectors:
+        if domainsOverlap(i, trial, alphad):
+            return True
+    return False
 
 # creates and returns a random point on a sphere
 # essentially, generates our trial domain
+# this will generate (x, y, z) coords
 def randomSpherePt(radius):
     u = random.random()
     v = random.random()
     phi = np.arccos(2*v-1)
     theta = 2*np.pi*u
-    R = (np.cos(theta)*np.sin(phi)) * (np.sin(theta)*np.sin(phi)) * (np.cos(phi))
-    print(f'''
-    u => {u}
-    v => {v}
-    phi => {phi}
-    theta => {theta}
-    R => {R}
-    ''')
-    pass
+    return np.array([np.cos(theta)*np.sin(phi), (np.sin(theta)*np.sin(phi)),  (np.cos(phi))])
 
 # returns a list of domain center vectors
 def randomDomainCentres(n, ad):
-    pass
+    alphad = alpha(n=n, ad=ad)
+    vectors = [randomSpherePt(1)]
+    for i in range(n-1):
+        trialpt = randomSpherePt(1)
+        while anyOverlap(vectors, trialpt, alphad):
+            trialpt = randomSpherePt(1)
+        vectors.append(trialpt)
+    return vectors
 
 #############################
 
