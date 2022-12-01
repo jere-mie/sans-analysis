@@ -12,13 +12,14 @@ def step1(F, Omat):
 
 def step2(Wp, w):
     # Wp = |Wp^2|
+    Wpp = np.zeros(Wp.shape)
     for i in range(len(Wp)):
         for j in range(len(Wp[0])):
             for k in range(len(Wp[0][0])):
-                Wp[i][j][k] = np.abs(Wp[i][j][k]**2)
+                Wpp[i][j][k] = np.abs(Wp[i][j][k]**2)
     Imon = [] # initializing
-    for i in range(len(Wp)):
-        Imon.append(Wp[i].dot(w))
+    for i in range(len(Wpp)):
+        Imon.append(Wpp[i].dot(w))
     Imon = np.array(Imon)
     return Imon
 
